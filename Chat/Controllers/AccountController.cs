@@ -86,7 +86,33 @@ namespace Chat.Controllers
             }
             //await _userManager.AddToRoleAsync(newUser, "Member");
             await _signInManager.SignInAsync(newUser, true);
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Index", "Profile");
         }
+
+        public async Task<IActionResult> Logout()
+        {
+            await _signInManager.SignOutAsync();
+            return RedirectToAction("Login", "Account");
+        }
+
+        //public async Task CreateRole()
+        //{
+        //    if (!await _roleManager.RoleExistsAsync("Admin"))
+        //    {
+        //        await _roleManager.CreateAsync(new IdentityRole { Name = "Admin" });
+        //    }
+        //    if (!await _roleManager.RoleExistsAsync("Moderator"))
+        //    {
+        //        await _roleManager.CreateAsync(new IdentityRole { Name = "Moderator" });
+        //    }
+        //    if (!await _roleManager.RoleExistsAsync("Employer"))
+        //    {
+        //        await _roleManager.CreateAsync(new IdentityRole { Name = "Employer" });
+        //    }
+        //    if (!await _roleManager.RoleExistsAsync("Employe"))
+        //    {
+        //        await _roleManager.CreateAsync(new IdentityRole { Name = "Employe" });
+        //    }
+        //}
     }
 }

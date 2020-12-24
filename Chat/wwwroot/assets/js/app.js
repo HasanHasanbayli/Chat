@@ -6,26 +6,26 @@ $(document).ready(function() {
     })
 
     // Layout Click Events
-    //$('#chats-tab').on('click', function(e) {
-    //    e.preventDefault()
-    //    $("body").removeClass("calls-tab-open friends-tab-open profile-tab-open");
-    //    $("body").addClass("chats-tab-open");
-    //})
-    //$('#calls-tab').on('click', function(e) {
-    //    e.preventDefault()
-    //    $("body").removeClass("chats-tab-open friends-tab-open profile-tab-open");
-    //    $("body").addClass("calls-tab-open");
-    //})
-    //$('#friends-tab').on('click', function(e) {
-    //    e.preventDefault()
-    //    $("body").removeClass("calls-tab-open chats-tab-open profile-tab-open");
-    //    $("body").addClass("friends-tab-open");
-    //})
-    //$('#profile-tab').on('click', function(e) {
-    //    e.preventDefault()
-    //    $("body").removeClass("calls-tab-open friends-tab-open chats-tab-open");
-    //    $("body").addClass("profile-tab-open");
-    //})
+    $('#chats-tab').on('click', function(e) {
+        e.preventDefault()
+        $("body").removeClass("calls-tab-open friends-tab-open profile-tab-open");
+        $("body").addClass("chats-tab-open");
+    })
+    $('#calls-tab').on('click', function(e) {
+        e.preventDefault()
+        $("body").removeClass("chats-tab-open friends-tab-open profile-tab-open");
+        $("body").addClass("calls-tab-open");
+    })
+    $('#friends-tab').on('click', function(e) {
+        e.preventDefault()
+        $("body").removeClass("calls-tab-open chats-tab-open profile-tab-open");
+        $("body").addClass("friends-tab-open");
+    })
+    $('#profile-tab').on('click', function(e) {
+        e.preventDefault()
+        $("body").removeClass("calls-tab-open friends-tab-open chats-tab-open");
+        $("body").addClass("profile-tab-open");
+    })
 
     //Chat Info
     $('[data-chat-info-toggle]').on('click', function(e) {

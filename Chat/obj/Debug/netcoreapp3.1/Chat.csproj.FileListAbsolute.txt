@@ -154,3 +154,6 @@ C:\Users\Hasan Hasanbayli\Desktop\Chat\Chat\obj\Debug\netcoreapp3.1\Razor\Views\
 C:\Users\Hasan Hasanbayli\Desktop\Chat\Chat\obj\Debug\netcoreapp3.1\Razor\Views\Calls\Index.cshtml.g.cs
 C:\Users\Hasan Hasanbayli\Desktop\Chat\Chat\obj\Debug\netcoreapp3.1\Razor\Views\Friends\Index.cshtml.g.cs
 C:\Users\Hasan Hasanbayli\Desktop\Chat\Chat\obj\Debug\netcoreapp3.1\Razor\Views\Profile\Index.cshtml.g.cs
+C:\Users\Hasan Hasanbayli\Desktop\Chat\Chat\obj\Debug\netcoreapp3.1\Razor\Views\Account\Login.cshtml.g.cs
+C:\Users\Hasan Hasanbayli\Desktop\Chat\Chat\obj\Debug\netcoreapp3.1\Razor\Views\Account\Register.cshtml.g.cs
+C:\Users\Hasan Hasanbayli\Desktop\Chat\Chat\obj\Debug\netcoreapp3.1\Razor\Views\Error\Index.cshtml.g.cs

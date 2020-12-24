@@ -1,4 +1,4 @@
-﻿
+﻿@model AppUser
 @{
     ViewData["Title"] = "Index";
 }
@@ -25,11 +25,18 @@
                                 <!-- Card Details Start -->
                                 <div class="d-flex flex-column align-items-center">
                                     <div class="avatar avatar-lg mb-3">
-                                        <img class="avatar-img" src="../assets/media/avatar/3.png" alt="">
+                                        @if (Model.Image != null)
+                                        {
+                                            <img class="avatar-img" src="~/assets/media/avatar/@Model.Image" alt="">
+                                        }
+                                        else
+                                        {
+                                            <img class="avatar-img" src="~/assets/media/avatar/avatarrjpg.jpg" alt="">
+                                        }
                                     </div>
 
                                     <div class="d-flex flex-column align-items-center">
-                                        <h5>Catherine Richardson</h5>
+                                        <h5>@Model.FirstName @Model.LastName</h5>
                                     </div>
 
                                     <div class="d-flex">
@@ -44,7 +51,8 @@
 
                                             <!-- Alternate :: External File link -->
                                             <!-- <img class="injectable hw-18" src="./../assets/media/heroicons/outline/logout.svg" alt=""> -->
-                                            <span>Logout</span>
+                                            <a asp-controller="Account" asp-action="Logout"><span style="color:black">Logout</span></a>
+                                            
                                         </button>
                                         <button class="btn btn-outline-default mx-1 d-xl-none"
                                                 data-profile-edit="" type="button">
@@ -123,7 +131,7 @@
                                         <div class="media align-items-center">
                                             <div class="media-body">
                                                 <p class="small text-muted mb-0">Birthdate</p>
-                                                <p class="mb-0">20/11/1992</p>
+                                                <p class="mb-0">@Model.Birthdate.ToString("dd/MMMM/yyyy")</p>
                                             </div>
                                             <!-- Default :: Inline SVG -->
                                             <svg class="text-muted hw-20 ml-1" fill="none"
@@ -143,7 +151,7 @@
                                         <div class="media align-items-center">
                                             <div class="media-body">
                                                 <p class="small text-muted mb-0">Phone</p>
-                                                <p class="mb-0">+01-222-364522</p>
+                                                <p class="mb-0">+ @Model.PhoneNumber</p>
                                             </div>
                                             <!-- Default :: Inline SVG -->
                                             <svg class="text-muted hw-20 ml-1" fill="none"
@@ -163,7 +171,7 @@
                                         <div class="media align-items-center">
                                             <div class="media-body">
                                                 <p class="small text-muted mb-0">Email</p>
-                                                <p class="mb-0">catherine.richardson@gmail.com</p>
+                                                <p class="mb-0">@Model.Email</p>
                                             </div>
 
                                             <!-- Default :: Inline SVG -->
@@ -184,7 +192,7 @@
                                         <div class="media align-items-center">
                                             <div class="media-body">
                                                 <p class="small text-muted mb-0">Website</p>
-                                                <p class="mb-0">www.catherichardson.com</p>
+                                                <p class="mb-0">@Model.WebSite</p>
                                             </div>
                                             <!-- Default :: Inline SVG -->
                                             <svg class="text-muted hw-20 ml-1" fill="none"
@@ -205,8 +213,7 @@
                                             <div class="media-body">
                                                 <p class="small text-muted mb-0">Address</p>
                                                 <p class="mb-0">
-                                                    1134 Ridder Park Road, San Fransisco, CA
-                                                    94851
+                                                   @Model.Address
                                                 </p>
                                             </div>
                                             <!-- Default :: Inline SVG -->
@@ -240,7 +247,8 @@
                                             <div class="media-body">
                                                 <p class="small text-muted mb-0">Facebook</p>
                                                 <a class="font-size-sm font-weight-medium"
-                                                   @*href="#">@cathe.richardson</a>*@
+                                                   target="_blank"
+                                                   href="https://www.facebook.com/@Model.Facebook">@Model.Facebook</a>
                                             </div>
                                             <!-- Default :: Inline SVG -->
                                             <svg class="text-muted hw-20 ml-1" viewBox="0 0 24 24"
@@ -260,7 +268,8 @@
                                             <div class="media-body">
                                                 <p class="small text-muted mb-0">Twitter</p>
                                                 <a class="font-size-sm font-weight-medium"
-                                                   @*href="#">@cathe.richardson</a>*@
+                                                   target="_blank"
+                                                   href="https://www.twitter.com/@Model.Twitter">@Model.Twitter</a>
                                             </div>
                                             <!-- Default :: Inline SVG -->
                                             <svg class="text-muted hw-20 ml-1" viewBox="0 0 24 24"
@@ -280,7 +289,8 @@
                                             <div class="media-body">
                                                 <p class="small text-muted mb-0">Instagram</p>
                                                 <a class="font-size-sm font-weight-medium"
-                                                   @*href="#">@cathe.richardson</a>*@
+                                                   target="_blank"
+                                                   href="https://www.instagram.com/@Model.Instagram">@Model.Instagram</a>
                                             </div>
                                             <!-- Default :: Inline SVG -->
                                             <svg class="text-muted hw-20 ml-1" viewBox="0 0 24 24"
@@ -302,7 +312,8 @@
                                             <div class="media-body">
                                                 <p class="small text-muted mb-0">Linkedin</p>
                                                 <a class="font-size-sm font-weight-medium"
-                                                   @*href="#">@cathe.richardson</a>*@
+                                                   target="_blank"
+                                                   href="https://www.linkedin.com/in/@Model.Linkedin">@Model.Linkedin</a>
                                             </div>
                                             <!-- Default :: Inline SVG -->
                                             <svg class="text-muted hw-20 ml-1" viewBox="0 0 24 24"
