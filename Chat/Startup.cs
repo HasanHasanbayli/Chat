@@ -1,4 +1,5 @@
 using Chat.DAL;
+using Chat.Hubs;
 using Chat.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -60,6 +61,7 @@ namespace Chat
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute("default", "{controller=Home}/{action=Index}/{id?}");
+                endpoints.MapHub<ChatHub>("/chathub");
             });
         }
     }

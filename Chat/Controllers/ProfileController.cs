@@ -1,5 +1,6 @@
 ﻿using Chat.DAL;
 using Chat.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -10,6 +11,7 @@ using System.Threading.Tasks;
 
 namespace Chat.Controllers
 {
+    [Authorize]
     public class ProfileController : Controller
     {
         private readonly AppDbContext _db;
@@ -27,14 +29,33 @@ namespace Chat.Controllers
         public async Task<IActionResult> Index()
         {
             AppUser user = await _userManager.FindByNameAsync(User.Identity.Name);
-            return View(user);
-        }
-
-        public async Task<IActionResult> UpdateProfile()
-        {
-            AppUser user = await _userManager.FindByNameAsync(User.Identity.Name);
             if (user == null) return RedirectToAction("Index", "Error");
             return View(user);
         }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Index(AppUser user)
+        {
+            if (User.Identity.IsAuthenticated)
+            {
+                AppUser exitsUser = await _userManager.FindByNameAsync(User.Identity.Name);
+                exitsUser.FirstName = user.FirstName;
+                exitsUser.LastName = user.LastName;
+                exitsUser.Birthdate = user.Birthdate;
+                exitsUser.Email = user.Email;
+                exitsUser.NormalizedEmail = user.Email;
+                exitsUser.PhoneNumber = user.PhoneNumber;
+                exitsUser.WebSite = user.WebSite;
+                exitsUser.Address = user.Address;
+                exitsUser.Facebook = user.Facebook;
+                exitsUser.Twitter = user.Twitter;
+                exitsUser.Instagram = user.Instagram;
+                exitsUser.Linkedin = user.Linkedin;
+            }
+            await _db.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
+        }
+       
     }
 }

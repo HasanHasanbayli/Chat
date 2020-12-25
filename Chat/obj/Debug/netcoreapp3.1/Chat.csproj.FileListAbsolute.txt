@@ -157,3 +157,4 @@ C:\Users\Hasan Hasanbayli\Desktop\Chat\Chat\obj\Debug\netcoreapp3.1\Razor\Views\
 C:\Users\Hasan Hasanbayli\Desktop\Chat\Chat\obj\Debug\netcoreapp3.1\Razor\Views\Account\Login.cshtml.g.cs
 C:\Users\Hasan Hasanbayli\Desktop\Chat\Chat\obj\Debug\netcoreapp3.1\Razor\Views\Account\Register.cshtml.g.cs
 C:\Users\Hasan Hasanbayli\Desktop\Chat\Chat\obj\Debug\netcoreapp3.1\Razor\Views\Error\Index.cshtml.g.cs
+C:\Users\Hasan Hasanbayli\Desktop\Chat\Chat\bin\Debug\netcoreapp3.1\libman.json

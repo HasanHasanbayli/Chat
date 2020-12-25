@@ -52,7 +52,7 @@
                                             <!-- Alternate :: External File link -->
                                             <!-- <img class="injectable hw-18" src="./../assets/media/heroicons/outline/logout.svg" alt=""> -->
                                             <a asp-controller="Account" asp-action="Logout"><span style="color:black">Logout</span></a>
-                                            
+
                                         </button>
                                         <button class="btn btn-outline-default mx-1 d-xl-none"
                                                 data-profile-edit="" type="button">
@@ -213,7 +213,7 @@
                                             <div class="media-body">
                                                 <p class="small text-muted mb-0">Address</p>
                                                 <p class="mb-0">
-                                                   @Model.Address
+                                                    @Model.Address
                                                 </p>
                                             </div>
                                             <!-- Default :: Inline SVG -->
@@ -372,67 +372,65 @@
                             <p class="mb-0 text-muted small">Update personal &amp; contact information</p>
                         </div>
 
-                        <div class="card-body">
+                        <form class="card-body" method="post" id="detailform2">
                             <div class="row">
                                 <div class="col-md-6 col-12">
                                     <div class="form-group">
                                         <label for="firstName">First Name</label>
-                                        <input type="text" class="form-control form-control-md" id="firstName"
-                                               placeholder="Type your first name" value="Catherine">
+                                        <input asp-for="FirstName" class="form-control form-control-md"
+                                               placeholder="Type your first name">
                                     </div>
                                 </div>
                                 <div class="col-md-6 col-12">
                                     <div class="form-group">
                                         <label for="lastName">Last Name</label>
-                                        <input type="text" class="form-control form-control-md" id="lastName"
-                                               placeholder="Type your last name" value="Richardson">
+                                        <input asp-for="LastName" class="form-control form-control-md"
+                                               placeholder="Type your last name">
                                     </div>
                                 </div>
                                 <div class="col-md-6 col-12">
                                     <div class="form-group">
                                         <label for="mobileNumber">Mobile number</label>
-                                        <input type="text" class="form-control form-control-md"
-                                               id="mobileNumber" placeholder="Type your mobile number"
-                                               value="+01-222-364522">
+                                        <input asp-for="PhoneNumber" type="number" class="form-control form-control-md"
+                                               placeholder="Type your mobile number">
                                     </div>
                                 </div>
                                 <div class="col-md-6 col-12">
                                     <div class="form-group">
                                         <label for="birthDate">Birth date</label>
-                                        <input type="text" class="form-control form-control-md" id="birthDate"
-                                               placeholder="dd/mm/yyyy" value="20/11/1992">
+                                        <input asp-for="Birthdate" asp-format="{0:dd/MM/yyyy}" type="date" class="form-control form-control-md"
+                                               placeholder="20/11/1992">
+                                        <span asp-validation-for="Birthdate" class="text-danger"></span>
                                     </div>
                                 </div>
                                 <div class="col-md-6 col-12">
                                     <div class="form-group">
                                         <label for="emailAddress">Email address</label>
-                                        <input type="email" class="form-control form-control-md"
-                                               id="emailAddress" placeholder="Type your email address"
-                                               value="catherine.richardson@gmail.com">
+                                        <input asp-for="Email" class="form-control form-control-md"
+                                               placeholder="Type your email address">
                                     </div>
                                 </div>
                                 <div class="col-md-6 col-12">
                                     <div class="form-group">
                                         <label for="webSite">Website</label>
-                                        <input type="text" class="form-control form-control-md" id="webSite"
-                                               placeholder="Type your website" value="www.catherichardson.com">
+                                        <input asp-for="WebSite" class="form-control form-control-md"
+                                               placeholder="Type your website">
                                     </div>
                                 </div>
                                 <div class="col-12">
                                     <div class="form-group">
                                         <label for="Address">Address</label>
-                                        <input type="text" class="form-control form-control-md" id="Address"
-                                               placeholder="Type your address"
-                                               value="1134 Ridder Park Road, San Fransisco, CA 94851">
+                                        <input asp-for="Address" class="form-control form-control-md"
+                                               placeholder="Type your address">
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                            <div class="card-footer d-flex justify-content-end">
+                                <a asp-action="Index" type="button" class="btn btn-link text-muted mx-1">Reset</a>
+                                <input type="submit" class="btn btn-primary" id="detailsubmit2" value="Save Changes" />
+                            </div>
+                        </form>
 
-                        <div class="card-footer d-flex justify-content-end">
-                            <button type="button" class="btn btn-link text-muted mx-1">Reset</button>
-                            <button type="button" class="btn btn-primary">Save Changes</button>
-                        </div>
                     </div>
 
                     <div class="card mb-3">
@@ -441,43 +439,42 @@
                             <p class="mb-0 text-muted small">Update personal &amp; contact information</p>
                         </div>
 
-                        <div class="card-body">
+                        <form class="card-body" method="post">
                             <div class="row">
                                 <div class="col-md-6 col-12">
                                     <div class="form-group">
                                         <label for="facebookId">Facebook</label>
-                                        <input type="text" class="form-control form-control-md" id="facebookId"
+                                        <input asp-for="Facebook" class="form-control form-control-md"
                                                placeholder="Username">
                                     </div>
                                 </div>
                                 <div class="col-md-6 col-12">
                                     <div class="form-group">
                                         <label for="twitterId">Twitter</label>
-                                        <input type="text" class="form-control form-control-md" id="twitterId"
+                                        <input asp-for="Twitter" class="form-control form-control-md"
                                                placeholder="Username">
                                     </div>
                                 </div>
                                 <div class="col-md-6 col-12">
                                     <div class="form-group">
                                         <label for="instagramId">Instagram</label>
-                                        <input type="text" class="form-control form-control-md" id="instagramId"
+                                        <input asp-for="Instagram" class="form-control form-control-md"
                                                placeholder="Username">
                                     </div>
                                 </div>
                                 <div class="col-md-6 col-12">
                                     <div class="form-group">
                                         <label for="linkedinId">Linkedin</label>
-                                        <input type="text" class="form-control form-control-md" id="linkedinId"
+                                        <input asp-for="Linkedin" class="form-control form-control-md"
                                                placeholder="Username">
                                     </div>
                                 </div>
                             </div>
-                        </div>
-
-                        <div class="card-footer d-flex justify-content-end">
-                            <button type="button" class="btn btn-link text-muted mx-1">Reset</button>
-                            <button type="button" class="btn btn-primary">Save Changes</button>
-                        </div>
+                            <div class="card-footer d-flex justify-content-end">
+                                <a asp-action="Index" type="button" class="btn btn-link text-muted mx-1">Reset</a>
+                                <input type="submit" class="btn btn-primary" value="Save Changes" />
+                            </div>
+                        </form>
                     </div>
 
                     <div class="card mb-3">
@@ -707,5 +704,28 @@
             </div>
         </div>
     </div>
- 
 </main>
+@section Scripts{
+    <script>
+        $(document).ready(function () {
+            $("#detailsubmit2").click(function () {
+                var data = $("#detailform2");
+                $.ajax({
+                    type: "POST",
+                    url: "/Home/Index",
+                    data: data,
+                    success: function (response) {
+                    }
+                })
+            })
+        })
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/jquery.validate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.11/jquery.validate.unobtrusive.min.js"></script>
+    <script>
+        $("form").on("submit", function () {
+            $("#Birthdate").rules("remove", "required");
+        })
+    </script>
+}

@@ -1,5 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Identity;
+﻿using Chat.Models;
+using Microsoft.AspNetCore.Http;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -7,10 +7,11 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Chat.Models
+namespace Chat.ViewModels
 {
-    public class AppUser: IdentityUser
+    public class UpdateVM
     {
+        public AppUser AppUser { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public DateTime Birthdate { get; set; }

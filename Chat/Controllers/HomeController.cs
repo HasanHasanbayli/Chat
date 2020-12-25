@@ -7,10 +7,14 @@ using System.Threading.Tasks;
 
 namespace Chat.Controllers
 {
-    //[Authorize]
+    [Authorize]
     public class HomeController : Controller
     {
         public IActionResult Index()
+        {
+            return View();
+        }
+        public IActionResult Chat()
         {
             return View();
         }
